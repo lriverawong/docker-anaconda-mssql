@@ -1,0 +1,17 @@
+name: local-ds-workspace
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - conda
+  - jupyter
+  - navigator-updater
+  - conda-verify
+  - conda-env
+  - anaconda-navigator
+  - anaconda==2020.11=py38_0
+  - conda-build
+  - _ipyw_jlab_nb_ext_conf
+  - python-dotenv
+prefix: /usr/local/anaconda3/envs/local-ds-workspace

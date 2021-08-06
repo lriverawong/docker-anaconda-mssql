@@ -1,0 +1,34 @@
+version: '3'
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "${SQL_SERVER_PASSWORD}"
+      ACCEPT_EULA: 'Y'
+    ports:
+      # Host:Container
+      - "1433:1433"
+    hostname: sql1
+    container_name: sql-server
+    volumes:
+      - ./local_db_map:/local_db_map
+      - db-store:/var/opt/mssql
+    networks:
+      - dev
+  anaconda:
+    build: .
+    ports:
+      - "8888:8888"
+    hostname: anaconda
+    container_name: anaconda
+    volumes:
+      - .:/app
+    networks:
+      - dev
+
+volumes:
+  db-store:
+
+networks:
+  dev:
+    driver: bridge

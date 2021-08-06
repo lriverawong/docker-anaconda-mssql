@@ -1,0 +1,29 @@
+# Files to ignore
+__pycache__
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+
+# database files
+local_db_map/*.zip
+local_db_map/*.bak
+local_db_map/*/
+
+# secrets
+.env
+
+# IDE configs
+.idea/
+
+# macOS Files
+*.DS_Store
